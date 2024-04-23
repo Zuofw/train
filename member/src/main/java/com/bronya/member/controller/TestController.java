@@ -1,4 +1,4 @@
-package com.bronya.train;
+package com.bronya.member.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@RequestMapping("/test")
-public class TestController {
 
-        @RequestMapping("/hello")
-        public String hello(){
-            return "Hello World!ssds";
-        }
+public class TestController {
+    @RequestMapping("/hello")
+    public String hello() {
+        return "hello";
+}
 
 }
