@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: member
+server:
+  port: 8081
+  servlet:
+    context-path: /member # \u9879\u76EE\u8BBF\u95EE\u8DEF\u5F84
