@@ -1,27 +1,26 @@
 package com.bronya.common.exception;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+/**
+ * @author liaodezhi
+ * @date 2023/07/05
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class BusinessException extends RuntimeException {
 
-    private BusinessExceptionEnum e;
+    private final Integer code;
 
-    public BusinessException(BusinessExceptionEnum e) {
-        this.e = e;
-    }
+    private final String message;
 
-    public BusinessExceptionEnum getE() {
-        return e;
-    }
+    private final String description;
 
-    public void setE(BusinessExceptionEnum e) {
-        this.e = e;
-    }
-
-    /**
-     * 不写入堆栈信息，提高性能
-     */
-    @Override
-    public Throwable fillInStackTrace() {
-        return this;
+    public BusinessException(ErrorCodeEnum errorCodeEnum, String description) {
+        this.code = errorCodeEnum.getCode();
+        this.message = errorCodeEnum.getMessage();
+        this.description = description;
     }
 
 }

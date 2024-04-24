@@ -1,5 +1,7 @@
 package com.bronya.member.controller;
 
+import com.bronya.common.resp.Result;
+import com.bronya.common.util.ResultUtils;
 import com.bronya.member.service.MemberService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +21,7 @@ public class MemberController {
         return memberService.count();
     }
     @PostMapping("/register")
-    public long register(String mobile) {
-        return  memberService.register(mobile);
+    public Result<?> register(String mobile) {
+        return ResultUtils.success(memberService.register(mobile));
     }
 }
