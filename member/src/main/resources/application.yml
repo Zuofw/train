@@ -1,4 +1,15 @@
 server:
   port: 8081
   servlet:
-    context-path: /member # \u9879\u76EE\u8BBF\u95EE\u8DEF\u5F84
+    context-path: /member # 为member服务添加上下文路径, 通过http://localhost:8081/member访问
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver #mysql8.0以上版本需要使用com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.134:3306/train?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: bronya
+    password: Bronya1224
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+mybatis-plus:
+    type-aliases-package: com.bronya.member.domain.entity # 实体类的包路径

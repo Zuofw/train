@@ -8,4 +8,4 @@ spring:
         - id: member
           uri: http://localhost:8081
           predicates:
-            - Path=/member/** #前缀匹配
+            - Path=/member/** #前缀匹配, 以/member/开头的请求
